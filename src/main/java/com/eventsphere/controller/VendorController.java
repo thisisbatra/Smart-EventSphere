@@ -1,8 +1,6 @@
 package com.eventsphere.controller;
 
 
-import com.eventsphere.entity.Vendor;
-import com.eventsphere.enums.ServiceType;
 import com.eventsphere.service.VendorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

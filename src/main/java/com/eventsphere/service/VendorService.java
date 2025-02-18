@@ -1,9 +1,6 @@
 package com.eventsphere.service;
 
 
-import com.eventsphere.entity.Vendor;
-import com.eventsphere.enums.ServiceType;
-import com.eventsphere.repository.VendorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

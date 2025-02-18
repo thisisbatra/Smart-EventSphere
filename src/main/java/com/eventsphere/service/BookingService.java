@@ -1,8 +1,6 @@
 package com.eventsphere.service;
 
-import com.eventsphere.entity.Booking;
 import com.eventsphere.entity.Event;
-import com.eventsphere.repository.BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

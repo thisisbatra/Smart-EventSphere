@@ -1,6 +1,5 @@
 package com.eventsphere.controller;
 
-import com.eventsphere.entity.Booking;
 import com.eventsphere.entity.Event;
 import com.eventsphere.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;

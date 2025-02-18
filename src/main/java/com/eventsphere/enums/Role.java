@@ -1,5 +1,5 @@
 package com.eventsphere.enums;
 
 public enum Role {
-    ORGANIZER, VENDOR
+    ORGANIZER, ATTENDEE, CREW, SPEAKER
 }

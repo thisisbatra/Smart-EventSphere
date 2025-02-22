@@ -9,5 +9,6 @@ public interface EventService {
     List<Event> getAllEvents();
     Event getEventById(Long eventId);
     List<Event> getEventsByOrganizer(Long organizerId);
-    void deleteEvent(Long eventId);
+    Event deleteEvent(Long eventId);
+    Event updateEvent(Long eventId, Event updatedEvent);
 }

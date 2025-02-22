@@ -20,12 +20,14 @@ public class UserServicesImpl implements UserServices {
 //    private PasswordEncoder passwordEncoder;
 
     @Override
-    public User registerUser(User user) {
-        if (userRepository.findByEmail(user.getEmail()).isPresent()) {
+    public User registerUser(User newUser) {
+
+        //User excitingUser = userRepository.findByEmail(newUser.getEmail());
+        if (userRepository.findByEmail(newUser.getEmail()).isPresent()) {
             throw new RuntimeException("Email is already in use.");
         }
         //user.setPassword(passwordEncoder.encode(user.getPassword()));
-        return userRepository.save(user);
+        return userRepository.save(newUser);
 
     }
 
@@ -55,7 +57,16 @@ public class UserServicesImpl implements UserServices {
     }
 
     @Override
-    public void deleteUser(Long id) {
-        userRepository.deleteById(id);
+    public String deleteUser(Long id) {
+        if(userRepository.existsById(id)){
+            userRepository.deleteById(id);
+            return "User deleted successfully";
+        }
+        return "User does not exist";
+    }
+
+    @Override
+    public List<User> getAllUser() {
+        return userRepository.findAll();
     }
 }

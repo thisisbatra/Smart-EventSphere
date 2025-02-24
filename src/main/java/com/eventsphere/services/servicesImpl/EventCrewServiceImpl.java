@@ -43,7 +43,6 @@ public class EventCrewServiceImpl implements EventCrewService {
         eventCrew.setEvent(event);
         eventCrew.setCrewMember(crewMember);
         eventCrewRepository.save(eventCrew);
-
         return "User assigned as crew successfully!";
     }
 
@@ -54,4 +53,18 @@ public class EventCrewServiceImpl implements EventCrewService {
                 .map(EventCrew::getCrewMember)
                 .collect(Collectors.toList());
     }
+
+//    @Override
+//    public String removeCrewFromEvent(Long eventId, Long userId) {
+//        Event event = eventRepository.findById(eventId)
+//                .orElseThrow(() -> new RuntimeException("Event not found"));
+//
+//        User crewMember = userRepository.findById(userId)
+//                .orElseThrow(() -> new RuntimeException("User not found"));
+//
+//        if (crewMember.getRole() != Role.CREW) {
+//            throw new RuntimeException("User is not a crew member");
+//        }
+//        eventCrewRepository.deleteById();
+//    }
 }

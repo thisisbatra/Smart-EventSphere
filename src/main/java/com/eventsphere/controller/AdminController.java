@@ -2,6 +2,7 @@ package com.eventsphere.controller;
 
 
 import com.eventsphere.entity.User;
+import com.eventsphere.repository.EventAttendeeRepository;
 import com.eventsphere.services.UserServices;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +15,11 @@ import java.util.List;
 public class AdminController {
 
     private final UserServices userService;
+    private final EventAttendeeRepository eventAttendeeRepository;
 
-    public AdminController(UserServices userService){
+    public AdminController(UserServices userService, EventAttendeeRepository eventAttendeeRepository){
         this.userService=userService;
+        this.eventAttendeeRepository=eventAttendeeRepository;
     }
 
 
@@ -24,6 +27,7 @@ public class AdminController {
     // Delete User
     @DeleteMapping("/{userId}")
     public ResponseEntity<String> deleteUser(@PathVariable Long userId) {
+        eventAttendeeRepository.deleteByAttendeeId(userId);
         String result = userService.deleteUser(userId);
         return ResponseEntity.ok(result);
     }
